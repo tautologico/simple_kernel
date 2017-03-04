@@ -16,8 +16,8 @@ Executable simple_kernel
   Path:             src/
   MainIs:           simple_kernel.ml
   Install:          false
-  BuildDepends:     result, lwt, jupyter-kernel
+  BuildDepends:     result, threads, lwt, jupyter-kernel
   CompiledObject:   best
-  
+
 
 
