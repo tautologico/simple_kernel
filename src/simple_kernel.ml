@@ -23,10 +23,15 @@ let is_complete code =
   Lwt.return Client.Kernel.Is_complete
 
 
-let kernel =
+let kennel =
   Client.Kernel.make ~language_version:[0; 0; 1]
                      ~language:"simple_kernel"
                      ~is_complete:is_complete
                      ~complete:complete
-                     ~exec:execute
+                     ~inspect:inspect
                      ~history:history
+                     ~exec:execute
+                     ()
+
+let () =
+  Lwt_main.run (Client_main.main ~usage:"simple very" kennel)
